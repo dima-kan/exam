@@ -11,7 +11,7 @@
 - `data_base.py` — створення баз даних
 - `paragraph_splitter.py` — розбиття документів на розділи
 - `general.txt`, `for_workers.txt` — документи лікарні
-- `ids` — ID розділів, назви розділів та файлів
+- `ids` — ID розділів
 
 ## Запуск
 
@@ -25,7 +25,7 @@ pip install -r requirements.txt
 GEMINI_API_KEY...
 PINECONE_API_KEY=...
 SUPABASE_DB_URL=...
-PINECONE_API_KEY...
+DATABASE_URL=...
 ```
 
 ```bash
