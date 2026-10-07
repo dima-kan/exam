@@ -34,7 +34,7 @@ embedding = GoogleGenerativeAIEmbeddings(
 
 pc = Pinecone(api_key=pinecone_api_key)
 
-index_name = "data-try"
+index_name = "information-hospital"
 
 if not pc.has_index(index_name):
     pc.create_index(
