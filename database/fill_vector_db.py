@@ -1,5 +1,5 @@
 import json
-import os
+from pathlib import Path
 from uuid import uuid4
 
 from langchain_core.documents import Document
@@ -10,23 +10,16 @@ from database.vector_db import vector_store
 documents = []
 ids = []
 
-for file_name in os.listdir(cfg.data_dir):
+for file in Path(cfg.data_dir).glob("*.txt"):
+    text = file.read_text(encoding="utf-8")
 
-    if not file_name.endswith(".txt"):
-        continue
-
-    with open(os.path.join(cfg.data_dir, file_name), "r", encoding="utf-8") as f:
-        text = f.read()
-
-    blocks = text.split("\n\n")
-
-    for block in blocks:
+    for block in text.split("\n\n"):
 
         if block.strip():
 
             document = Document(
                 page_content=block.strip(),
-                metadata={"source": file_name},
+                metadata={"source": file.name},
             )
 
             documents.append(document)

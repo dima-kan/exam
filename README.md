@@ -64,7 +64,7 @@ streamlit run main.py
 
 ## Як це працює
 
-**Векторна БД:** файли з `data/` розбиваються на блоки (`paragraph_splitter.py`), завантажуються в Pinecone, а їхні ID зберігаються у `id.json`.
+**Векторна БД:** файли з `data/` розбиваються на блоки завантажуються в Pinecone, а їхні ID зберігаються у `id.json`.
 
 **Реляційна БД:** агент працює з таблицями Supabase через `SQLDatabase` та `SQLDatabaseToolkit`.
 
